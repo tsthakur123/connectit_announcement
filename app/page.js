@@ -290,7 +290,7 @@ const Page = () => {
             <div ref={cardRef} className="w-full h-full relative hover:blur-sm">
               <Image
                 className="img"
-                src="/images/cardBg.jpg"
+                src="/images/cardBg.svg"
                 alt=""
                 style={{ objectFit: "cover" }}
                 fill
