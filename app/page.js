@@ -12,7 +12,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Marquee } from "../components/Marquee";
 import LocomotiveScroll from "locomotive-scroll";
 
-const locomotiveScroll = new LocomotiveScroll();
+// const locomotiveScroll = new LocomotiveScroll();
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -179,8 +179,6 @@ const Page = () => {
         </div>
       </div>
       <div
-        data-scroll
-        data-scroll-speed="2"
         id="page2"
         className="w-full bg-[#fbf1ec] min-h-screen rounded-t-[80px] p-6 lg:p-20"
       >
@@ -322,8 +320,6 @@ const Page = () => {
         </div>
       </div>
       <div
-        data-scroll
-        data-scroll-speed="1.5"
         id="page5"
         className="w-full h-[140vh] md:min-h-screen relative"
       >
