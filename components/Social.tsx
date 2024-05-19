@@ -30,7 +30,7 @@ export function Social({ title, username, icon }: SocialProps) {
   return (
     <>
       <button
-        className="flex w-[21%] items-center relative overflow-hidden border-t border-[#FAFAFA]"
+        className="flex md:w-[21%] w-full items-center relative overflow-hidden border-t border-[#FAFAFA]"
         onMouseEnter={handleHover}
         onMouseLeave={handleHoverOut}
       >
