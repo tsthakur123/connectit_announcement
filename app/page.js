@@ -385,7 +385,7 @@ const Page = () => {
               data-scroll
               data-scroll-speed="-.5"
               className="img scale-125"
-              src="/images/contactBg2.svg"
+              src="/images/contactBGP.svg"
               alt=""
               style={{ objectFit: "cover" }}
               fill
