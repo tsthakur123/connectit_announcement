@@ -10,7 +10,7 @@ interface MissionProps {
 export function MissionCard({ title, content, icon }: MissionProps) {
   return (
     <>
-      <div className="w-full lg:w-1/3 h-[47vh] backdrop-blur-sm bg-[#9292921c] hover:bg-[#6E32E1] hover:pl-7 md:hover:pl-12 transition-all border-zinc-700 border rounded p-6 lg:p-9 mb-4 lg:mb-0">
+      <div className="smoothReveal2 translate-y-[50%] opacity-0 w-full lg:w-1/3 h-[47vh] backdrop-blur-sm bg-[#9292921c] hover:bg-[#6E32E1] hover:pl-7 md:hover:pl-10 transition-all border-zinc-700 border rounded p-6 lg:p-9 mb-4 lg:mb-0">
         <div className="h-full w-full flex flex-col">
           <div className="relative w-12 h-16 lg:w-16 lg:h-16 mb-4">
             <Image

@@ -11,6 +11,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Marquee } from "../components/Marquee";
 import MissionCard from "../components/MissionCard";
+import { JoinCard } from "../components/JoinCard";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -70,6 +71,30 @@ const Page = () => {
     },
   ];
 
+  const join = [
+    {
+      index: "1",
+      title: "Be Part of Something Big",
+      content:
+        "ConnectIT isn't just a platform - it's a movement. Join us and be part of a revolution that will change the tech landscape forever.",
+      icon: "/images/kzero-1.png",
+    },
+    {
+      index: "2",
+      title: "Unleash Your Inner Nerd",
+      content:
+        "Whether you're a tech professional looking to advance your career or a company seeking top talent, ConnectIT is your home. Embrace your inner nerd and unlock limitless opportunities with us.",
+      icon: "/images/kzero-2.png",
+    },
+    {
+      index: "3",
+      title: "Connect, Collaborate, Innovate",
+      content:
+        "Join a community that values collaboration, diversity, and making a positive impact on the world. With ConnectIT, the future starts here.",
+      icon: "/images/kzero-3.png",
+    },
+  ];
+
   useGSAP(() => {
     // gsap code here...
     gsap.to("#page2 .heroText", {
@@ -106,6 +131,35 @@ const Page = () => {
       "anime"
     );
     gsap.from(
+      ".reveal",
+      {
+        translateY: "50%",
+        opacity: 0,
+        duration: 1,
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: "#our-mission .reveal",
+          scroller: "body",
+          start: "top 85%",
+        },
+      },
+      "anime"
+    );
+    gsap.from(
+      cardRef.current,
+      {
+        scale: 0,
+        duration: 1,
+        ease: "expo.out",
+        scrollTrigger: {
+          trigger: cardRef.current,
+          scroller: "body",
+          start: "top 85%",
+        },
+      },
+      "anime"
+    );
+    gsap.from(
       ".btnReveal",
       {
         width: "11%",
@@ -119,6 +173,54 @@ const Page = () => {
       },
       "anime"
     );
+    gsap.from(".smoothReveal", {
+      y: "50%",
+      opacity: 0,
+      duration: 2,
+      ease: "circ.out",
+      scrollTrigger: {
+        trigger: "#page2 .smoothReveal",
+        scroller: "body",
+        start: "top 80%",
+      },
+    });
+    gsap.to(".smoothReveal", {
+      y: "0%",
+      opacity: 1,
+      duration: 2,
+      ease: "circ.out",
+      scrollTrigger: {
+        trigger: "#container .smoothReveal",
+        scroller: "body",
+        start: "top 80%",
+      },
+    });
+    gsap.to(".smoothReveal2", {
+      y: "0",
+      opacity: 1,
+      duration: 0.6,
+      stagger: 0.3,
+      ease: "circ.out",
+      scrollTrigger: {
+        trigger: "#ourMission .smoothReveal2",
+        scroller: "body",
+        start: "top 75%",
+      },
+    });
+    gsap.from("#card", {
+      scale: 0.7,
+      duration: 1,
+      stagger: 0.2,
+
+      ease: "circ.out",
+      scrollTrigger: {
+        trigger: "#card-wrapper #card",
+        scroller: "body",
+        start: "top 75%",
+        end: "top 20%",
+        scrub: 1,
+      },
+    });
     gsap.from(
       buttonRef.current,
       {
@@ -252,7 +354,7 @@ const Page = () => {
               id="content"
               className="my-10 text-xl lg:text-3xl font-semibold opacity-75"
             >
-              <p className="leading-none md:leading-normal">
+              <p className="smoothReveal leading-none md:leading-normal">
                 ConnectIT is more than just a platform - we&apos;re a passionate
                 team of tech enthusiasts, innovators, and dreamers. We believe
                 in the power of technology to change the world, and we&apos;re
@@ -264,23 +366,62 @@ const Page = () => {
           </div>
         </div>
         <div
-          id="ourMission"
-          className="w-full min-h-screen bg-[#0A0A0A] p-6 lg:p-20"
+          id="our-mission"
+          className="w-full min-h-screen bg-[#141414] relative"
         >
-          <div className="text-[#FAFAFA] text-4xl lg:text-8xl mb-8 lg:mb-16 text-center lg:text-left">
-            Our Mission
-          </div>
-          <div className="w-full flex flex-col lg:flex-row flex-wrap lg:flex-nowrap justify-center md:gap-4">
-            {mission.map((card, i) => (
-              <MissionCard
-                key={i}
-                title={card.title}
-                content={card.content}
-                icon={card.icon}
-              />
-            ))}
+          <div className="w-full h-[170vh] bg-[url(/images/ourMissionbg.jpg)] opacity-10 absolute"></div>
+          <div className="w-full h-full p-6 lg:p-20">
+            <div className="reveal text-[#FAFAFA] text-4xl lg:text-8xl mb-8 lg:mb-16 text-center lg:text-left">
+              Our Mission
+            </div>
+            <div
+              id="ourMission"
+              className="w-full flex flex-col lg:flex-row flex-wrap lg:flex-nowrap justify-center md:gap-4"
+            >
+              {mission.map((card, i) => (
+                <MissionCard
+                  key={i}
+                  title={card.title}
+                  content={card.content}
+                  icon={card.icon}
+                />
+              ))}
+            </div>
           </div>
         </div>
+        <div
+          id="whyJoinUs"
+          className="w-full h-[240vh] lg:h-[110vh] bg-[#d6d8e2] relative"
+        >
+          <div className="absolute w-full h-full p-6 lg:p-20 z-10">
+            <h1 className=" text-4xl md:text-6xl lg:text-8xl tracking-tight text-center mb-14 lg:mb-10">
+              Why Join us
+            </h1>
+            <div
+              id="card-wrapper"
+              className="w-full h-full flex flex-col lg:flex-row flex-nowrap gap-10"
+            >
+              {join.map((card, i) => (
+                <JoinCard
+                  key={i}
+                  title={card.title}
+                  content={card.content}
+                  icon={card.icon}
+                />
+              ))}
+            </div>
+          </div>
+          <div className="w-full h-full relative">
+            <Image
+              className="img"
+              src="/images/WhyJoinUsBG.svg"
+              alt=""
+              style={{ objectFit: "cover" }}
+              fill
+            />
+          </div>
+        </div>
+
         <div id="page3" className="w-full max-h-screen p-6 lg:p-20">
           <div
             id="container"
@@ -321,7 +462,7 @@ const Page = () => {
                 </div>
               </button>
             </div>
-            <div className="w-full lg:w-2/5 text-lg lg:text-2xl pt-12 lg:pt-52 px-6">
+            <div className="smoothReveal w-full opacity-0 translate-y-1/2 lg:w-2/5 text-lg lg:text-2xl pt-12 lg:pt-52 px-6">
               <p>
                 The countdown to ConnectIT has begun, and you don&apos;t want to
                 miss out. Sign up now to be among the first to experience the
