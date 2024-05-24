@@ -324,7 +324,7 @@ const Page = () => {
             id="headerText"
             className="flex justify-center border-b border-zinc-400 pt-12 pb-12 lg:pb-32 mb-4"
           >
-            <div className="w-full lg:w-3/5 text-center text-[7vw] lg:text-[3.1vw] font-bold tracking-wide leading-none">
+            <div className="w-full lg:w-3/5 text-center text-[6vw] lg:text-[3.1vw] font-semibold md:font-bold tracking-wide leading-none">
               <div>
                 {words.map((word, wordIndex) => (
                   <span key={wordIndex}>
@@ -352,9 +352,9 @@ const Page = () => {
             </div>
             <div
               id="content"
-              className="my-10 text-xl lg:text-3xl font-semibold opacity-75"
+              className="my-10 text-xl lg:text-3xl font-medium md:font-semibold opacity-75"
             >
-              <p className="smoothReveal leading-none md:leading-normal">
+              <p className="smoothReveal leading-6 md:leading-normal">
                 ConnectIT is more than just a platform - we&apos;re a passionate
                 team of tech enthusiasts, innovators, and dreamers. We believe
                 in the power of technology to change the world, and we&apos;re
