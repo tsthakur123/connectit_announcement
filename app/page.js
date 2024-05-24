@@ -32,21 +32,25 @@ const Page = () => {
       title: "Facebook",
       username: "@connectit",
       icon: "/images/facebook.svg",
+      link: "https://www.facebook.com/profile.php?id=61559952661167&mibextid=rS40aB7S9Ucbxw6v",
     },
     {
       title: "Instagram",
       username: "@connectit",
       icon: "/images/insta.svg",
+      link: "https://www.instagram.com/connect_.it?utm_source=qr&igsh=MTY1OGdnNXBxazNjcQ==",
     },
     {
       title: "X",
       username: "@connectit",
       icon: "/images/x.svg",
+      link: "https://x.com/_connect_it?t=uRHlivh0Gt_E6qlpItZXDg&s=08",
     },
     {
       title: "LinkedIn",
       username: "@connectit",
       icon: "/images/linkedin.svg",
+      link: "https://www.linkedin.com/company/letsconnectit/",
     },
   ];
 
@@ -445,6 +449,9 @@ const Page = () => {
                 onMouseEnter={handleButtonHover}
                 onMouseLeave={handleButtonHoverOut}
                 className="btnReveal bg-[#FE744D] h-[6vh] md:h-[8vh] w-[60%] lg:w-[30%] px-6 rounded-full text-sm lg:text-base text-[#FAFAFA] uppercase tracking-tight overflow-hidden"
+                onClick={() =>
+                  window.open("https://forms.gle/w8VSnXtUTjDidqMk9", "_blank")
+                }
               >
                 <div ref={buttonRef} className="h-full">
                   <div className="button flex items-center gap-14 h-full">
@@ -542,8 +549,11 @@ const Page = () => {
               <p className="uppercase">Here.</p>
             </div>
             <div className="flex flex-col lg:flex-row w-full justify-between gap-4 lg:gap-20 text-base lg:text-2xl pt-10">
-              <Button name={"Write a Message"} />
-              <Button name={"Discuss Project"} />
+              <Button name={"Experience ConnectIT"} link={"https://connectit-mvp-frontend.vercel.app/"} />
+              <Button
+                name={"Join the Team"}
+                link={"https://forms.gle/z6qGr1U4XT8WSQXW8"}
+              />
             </div>
             <div className="flex flex-col lg:flex-row justify-between w-full mt-20 relative gap-4 lg:gap-0">
               {social.map((card, i) => (
@@ -552,6 +562,7 @@ const Page = () => {
                   title={card.title}
                   username={card.username}
                   icon={card.icon}
+                  link={card.link}
                 />
               ))}
             </div>

@@ -1,9 +1,0 @@
-{
-    "rewrites": [
-      {
-        "source": "/analyze_project/(.*)",
-        "destination": "https://connectit-mvp-frontend.vercel.app/$1"
-      }
-    ]
-  }
-  
