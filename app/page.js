@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useRef } from "react";
 import { TypewriterEffectSmoothDemo } from "../components/TypewriterEffectSmoothDemo";
-import { Card } from "../components/Card";
 import { TbArrowUpRight } from "react-icons/tb";
 import Image from "next/image";
 import { Button } from "../components/Button";
@@ -12,6 +11,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Marquee } from "../components/Marquee";
 import MissionCard from "../components/MissionCard";
 import { JoinCard } from "../components/JoinCard";
+import { Navbar } from "../components/Navbar";
 
 gsap.registerPlugin(useGSAP);
 gsap.registerPlugin(ScrollTrigger);
@@ -282,7 +282,8 @@ const Page = () => {
   const words = paragraph.split(" ");
 
   return (
-    <div id="main" className="w-full h-screen font-gilroy bg-black relative">
+    <div id="main" className="w-full h-[800vh] bg-black md:h-[600vh] font-gilroy relative">
+      <Navbar />
       <div
         data-scroll
         data-scroll-speed="-.5"
@@ -291,7 +292,7 @@ const Page = () => {
       >
         <div
           id="left"
-          className="bg-[#1B1730] w-full lg:w-1/2 h-full flex justify-center items-center rounded-t-3xl md:rounded-r-3xl md:rounded-tl-none p-4 lg:p-0"
+          className="bg-[#1B1730] w-full lg:w-1/2 h-full flex justify-center items-center p-4 lg:p-0"
         >
           <div>
             <p className="text-3xl lg:text-5xl font-medium tracking-wider text-center text-[#FAFAFA]">
@@ -426,7 +427,7 @@ const Page = () => {
           </div>
         </div>
 
-        <div id="page3" className="w-full max-h-screen p-6 lg:p-20">
+        <div id="page3" className="w-full bg-[#FFFFFF] max-h-screen p-6 lg:p-20">
           <div
             id="container"
             className="flex flex-col lg:flex-row justify-between"
@@ -481,7 +482,7 @@ const Page = () => {
         </div>
         <div
           id="page4"
-          className="w-full min-h-screen flex flex-col lg:flex-row justify-between p-6 lg:p-20"
+          className="w-full min-h-screen flex flex-col lg:flex-row justify-between p-6 bg-[#FFFFFF] lg:p-20"
         >
           <div id="leftContainer" className="w-full h-[40vh] md:min-h-full">
             <div
@@ -540,7 +541,7 @@ const Page = () => {
             />
           </div>
           <div
-            id="content"
+            id="contact"
             className="absolute text-[#FAFAFA] p-6 lg:p-20 w-full"
           >
             <div className=" text-4xl lg:text-7xl text-center font-bold tracking-wide mb-12">
@@ -549,7 +550,10 @@ const Page = () => {
               <p className="uppercase">Here.</p>
             </div>
             <div className="flex flex-col lg:flex-row w-full justify-between gap-4 lg:gap-20 text-base lg:text-2xl pt-10">
-              <Button name={"Experience ConnectIT"} link={"https://connectit-mvp-frontend.vercel.app/"} />
+              <Button
+                name={"Experience ConnectIT"}
+                link={"https://connectit-mvp-frontend.vercel.app/"}
+              />
               <Button
                 name={"Join the Team"}
                 link={"https://forms.gle/z6qGr1U4XT8WSQXW8"}

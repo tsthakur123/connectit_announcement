@@ -3,20 +3,62 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Gilroy';
-  src: url('../public/fonts/Gilroy-Medium.e7e7c091.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: url("../public/fonts/Gilroy-Medium.e7e7c091.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'GilroyLight';
-  src: url('../public/fonts/Radomir\ Tinkov\ -\ Gilroy-Light.otf') format('truetype');
+  font-family: "GilroyLight";
+  src: url("../public/fonts/Radomir\ Tinkov\ -\ Gilroy-Light.otf")
+    format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Abnes';
-  src: url('../public/fonts/AbnesRegular.otf') format('truetype');
+  font-family: "Abnes";
+  src: url("../public/fonts/AbnesRegular.otf") format("truetype");
   font-weight: normal;
   font-style: normal;
+}
+@keyframes clipPathAnimation {
+  from {
+    clip-path: polygon(100% 50%, 150% 0, 250% 0, 250% 100%, 150% 100%);
+  }
+  to {
+    clip-path: polygon(0 50%, 0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+@keyframes clipPathAnimation90 {
+  from {
+    clip-path: polygon(50% 0, 0 -50%, 0 -150%, 100% -150%, 100% -50%);
+  }
+  to {
+    clip-path: polygon(50% 100%, 0 100%, 0 0, 100% 0, 100% 100%);
+  }
+}
+/* Default animation */
+.clip-path-animation {
+  animation: clipPathAnimation90 0.75s cubic-bezier(0.215, 0.61, 0.355, 1)
+    forwards;
+}
+
+/* Animation for screens larger than 1024px */
+@media (min-width: 1024px) {
+  .clip-path-animation {
+    animation: clipPathAnimation 0.75s cubic-bezier(0.215, 0.61, 0.355, 1)
+      forwards;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.overlay::before {
+  animation: fadeOut 0.75s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
 }
